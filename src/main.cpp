@@ -1,7 +1,7 @@
 //
 // Created by LiuProJiaJie on 2024/10/14.
 //
-#include "include/raylib.h"
+#include "raylib.h"
 
 int main() {
     const int screenWidth = 800;

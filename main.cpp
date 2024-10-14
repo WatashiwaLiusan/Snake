@@ -14,6 +14,7 @@ int main() {
         DrawText("It works!", 20, 20, 20, BLACK);
         EndDrawing();
     }
+
     CloseWindow();
     return 0;
 }

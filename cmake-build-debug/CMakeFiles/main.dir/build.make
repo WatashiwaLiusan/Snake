@@ -83,20 +83,54 @@ CMakeFiles/main.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cpp.s"
 	"E:\Clion\CLion 2024.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\LiuProJiaJie\CLionProjects\Snake\src\main.cpp -o CMakeFiles\main.dir\src\main.cpp.s
 
+CMakeFiles/main.dir/src/object/SnakeBody.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/object/SnakeBody.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
+CMakeFiles/main.dir/src/object/SnakeBody.cpp.obj: C:/Users/LiuProJiaJie/CLionProjects/Snake/src/object/SnakeBody.cpp
+CMakeFiles/main.dir/src/object/SnakeBody.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\LiuProJiaJie\CLionProjects\Snake\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/object/SnakeBody.cpp.obj"
+	"E:\Clion\CLion 2024.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/object/SnakeBody.cpp.obj -MF CMakeFiles\main.dir\src\object\SnakeBody.cpp.obj.d -o CMakeFiles\main.dir\src\object\SnakeBody.cpp.obj -c C:\Users\LiuProJiaJie\CLionProjects\Snake\src\object\SnakeBody.cpp
+
+CMakeFiles/main.dir/src/object/SnakeBody.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/object/SnakeBody.cpp.i"
+	"E:\Clion\CLion 2024.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\LiuProJiaJie\CLionProjects\Snake\src\object\SnakeBody.cpp > CMakeFiles\main.dir\src\object\SnakeBody.cpp.i
+
+CMakeFiles/main.dir/src/object/SnakeBody.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/object/SnakeBody.cpp.s"
+	"E:\Clion\CLion 2024.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\LiuProJiaJie\CLionProjects\Snake\src\object\SnakeBody.cpp -o CMakeFiles\main.dir\src\object\SnakeBody.cpp.s
+
+CMakeFiles/main.dir/src/object/Snake.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/object/Snake.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
+CMakeFiles/main.dir/src/object/Snake.cpp.obj: C:/Users/LiuProJiaJie/CLionProjects/Snake/src/object/Snake.cpp
+CMakeFiles/main.dir/src/object/Snake.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\LiuProJiaJie\CLionProjects\Snake\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/object/Snake.cpp.obj"
+	"E:\Clion\CLion 2024.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/object/Snake.cpp.obj -MF CMakeFiles\main.dir\src\object\Snake.cpp.obj.d -o CMakeFiles\main.dir\src\object\Snake.cpp.obj -c C:\Users\LiuProJiaJie\CLionProjects\Snake\src\object\Snake.cpp
+
+CMakeFiles/main.dir/src/object/Snake.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/object/Snake.cpp.i"
+	"E:\Clion\CLion 2024.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\LiuProJiaJie\CLionProjects\Snake\src\object\Snake.cpp > CMakeFiles\main.dir\src\object\Snake.cpp.i
+
+CMakeFiles/main.dir/src/object/Snake.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/object/Snake.cpp.s"
+	"E:\Clion\CLion 2024.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\LiuProJiaJie\CLionProjects\Snake\src\object\Snake.cpp -o CMakeFiles\main.dir\src\object\Snake.cpp.s
+
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/src/main.cpp.obj"
+"CMakeFiles/main.dir/src/main.cpp.obj" \
+"CMakeFiles/main.dir/src/object/SnakeBody.cpp.obj" \
+"CMakeFiles/main.dir/src/object/Snake.cpp.obj"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
 main.exe: CMakeFiles/main.dir/src/main.cpp.obj
+main.exe: CMakeFiles/main.dir/src/object/SnakeBody.cpp.obj
+main.exe: CMakeFiles/main.dir/src/object/Snake.cpp.obj
 main.exe: CMakeFiles/main.dir/build.make
 main.exe: C:/Users/LiuProJiaJie/CLionProjects/Snake/lib/libraylib.a
 main.exe: CMakeFiles/main.dir/linkLibs.rsp
 main.exe: CMakeFiles/main.dir/objects1.rsp
 main.exe: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\LiuProJiaJie\CLionProjects\Snake\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\LiuProJiaJie\CLionProjects\Snake\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\main.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

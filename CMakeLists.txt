@@ -4,7 +4,11 @@ project(Snake)
 set(CMAKE_CXX_STANDARD 20)
 set(BUILD_EXAMPLES OFF)
 
-add_executable(main src/main.cpp)
+add_executable(main src/main.cpp
+        src/object/SnakeBody.h
+        src/object/Snake.h
+        src/object/SnakeBody.cpp
+        src/object/Snake.cpp)
 
 include_directories(include)
 

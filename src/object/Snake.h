@@ -10,15 +10,19 @@
 
 class Snake {
 private:
-    SnakeBody *head;
-    SnakeBody *tail;
-    Vector2 direction;
-    int tailCount;
-    int speed;
-    int length;
+
+    SnakeBody *head{};
+    SnakeBody *tail{};
+    int tailCount{};
+    int length{};
 public:
-    Snake(int speed,Vector2 headPos,Vector2 direction);
+    float speed;
+    Vector2 direction{};
+    Vector2 getDirection();
+    Snake(float speed,Vector2 headPos,Vector2 direction,const Texture2D &texture);
+    Snake();
     Vector2 addHead();
+    Texture2D texture;
 };
 
 

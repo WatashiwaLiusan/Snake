@@ -8,7 +8,12 @@ add_executable(main src/main.cpp
         src/object/SnakeBody.h
         src/object/Snake.h
         src/object/SnakeBody.cpp
-        src/object/Snake.cpp)
+        src/object/Snake.cpp
+        src/controller/GameController.h
+        src/controller/GameController.cpp
+        src/object/Apple.cpp
+        src/view/GameView.h
+        src/view/GameView.cpp)
 
 include_directories(include)
 

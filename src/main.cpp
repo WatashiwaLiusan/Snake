@@ -8,7 +8,7 @@ Texture2D SnakeTexture;
 void init(){
     AppleTexture = LoadTexture("image/apple.png");
     SnakeHeadTexture = LoadTexture("image/snake_head");
-    SnakeTexture = LoadTexture("image/snake_body");
+    SnakeTexture = LoadTexture("images/snake/snake_body.png");
 }
 
 void mainMenu(){

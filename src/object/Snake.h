@@ -23,6 +23,7 @@ public:
     Snake();
     Vector2 addHead();
     Texture2D texture;
+    SnakeBody* getHead();
 };
 
 

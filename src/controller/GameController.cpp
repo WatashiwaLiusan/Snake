@@ -3,49 +3,47 @@
 //
 
 #include "GameController.h"
-
 void GameController::move() {
     if (time == 0){
-        time = 100/modelSnake.speed;
-        memory.push_back(modelSnake.addHead());
-        draw(modelSnake.texture,memory);
+        time = 100/modelSnake->speed;
+        modelSnake->addHead();
     }
     time--;
 
 }
 
-GameController::GameController(Snake modelSnake) {
+GameController::GameController(Snake *modelSnake) {
     this->modelSnake = modelSnake;
 }
 
 void GameController::input() {
-    if(IsKeyPressed(KEY_A) && modelSnake.getDirection().x != 1)
-        modelSnake.direction = {-1,0};
-    if(IsKeyPressed(KEY_W) && modelSnake.getDirection().y != 1)
-        modelSnake.direction = {0,-1};
-    if(IsKeyPressed(KEY_S) && modelSnake.getDirection().y != -1)
-        modelSnake.direction = {0,1};
-    if(IsKeyPressed(KEY_D) && modelSnake.getDirection().x != -1)
-        modelSnake.direction = {1,0};
+    if(IsKeyPressed(KEY_A) && modelSnake->getDirection().x != 1)
+        modelSnake->direction = {-1,0};
+    if(IsKeyPressed(KEY_W) && modelSnake->getDirection().y != 1)
+        modelSnake->direction = {0,-1};
+    if(IsKeyPressed(KEY_S) && modelSnake->getDirection().y != -1)
+        modelSnake->direction = {0,1};
+    if(IsKeyPressed(KEY_D) && modelSnake->getDirection().x != -1)
+        modelSnake->direction = {1,0};
 }
 
 void GameController::detect() {
-    for (int i = 0; i < memory.size(); ++i) {
-        for (int j = i; j < memory.size(); ++j) {
-            if(memory[i].x == memory[j].x && memory[i].y == memory[j].y)
-                GameOver = true;
+    //TODO 头出界
+
+    //判断身体碰撞
+    SnakeBody *sb = modelSnake->getHead();
+    std::set<std::pair<int,int>> occupied;
+    while(sb != nullptr){
+        std::pair<int,int> pos = {sb->getPosition().x,sb->getPosition().y};
+        if(occupied.contains(pos)){
+            GameOver = true;
+            break;
         }
+        occupied.emplace(pos);
+        sb = sb->next;
     }
 }
 
 bool GameController::IsGameOver() {
     return GameOver;
-}
-
-
-void GameController::draw(Texture2D texture, std::vector<Vector2> pos) {
-    for (int i = 0; i < pos.size(); ++i) {
-        DrawTextureEx(texture,pos[i],0,1,WHITE);
-    }
-
 }

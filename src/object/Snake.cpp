@@ -24,3 +24,7 @@ Snake::Snake() {}
 Vector2 Snake::getDirection() {
     return this->direction;
 }
+
+SnakeBody* Snake::getHead() {
+    return head;
+}

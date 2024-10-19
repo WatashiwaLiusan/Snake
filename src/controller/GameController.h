@@ -8,20 +8,19 @@
 #include "..\object\Snake.h"
 #include "..\object\Apple.h"
 #include "../view/GameView.h"
+#include <set>
 class GameController {
 private:
     bool GameOver = false;
-    std::vector<Vector2> memory = {{100,500}};
     float time = 0;
-    Snake modelSnake{};
+    Snake *modelSnake{};
     Apple modelApple{};
 public:
-    GameController(Snake modelSnake);
+    GameController(Snake *modelSnake);
     bool IsGameOver();
     void move();
     void input();
     void detect();
-    void draw(Texture2D texture,std::vector<Vector2> pos);
 };
 
 

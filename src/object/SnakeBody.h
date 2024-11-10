@@ -8,7 +8,7 @@
 
 class SnakeBody {
 private:
-    Vector2 position;
+    Vector2 position{};
 public:
     SnakeBody *next;
     SnakeBody *prev;

@@ -7,20 +7,24 @@
 #include "..\object\SnakeBody.h"
 #include "..\object\Snake.h"
 #include "..\object\Apple.h"
-#include "../view/GameView.h"
 #include <set>
 class GameController {
 private:
-    bool GameOver = false;
+    bool gameOver = false;
+    bool win = false;
     float time = 0;
     Snake *modelSnake{};
-    Apple modelApple{};
+    Apple *modelApple{};
+    Vector2 temp = {1,0};
 public:
-    GameController(Snake *modelSnake);
-    bool IsGameOver();
+    GameController(Snake *modelSnake, Apple *modelApple);
+    bool isGameOver();
     void move();
     void input();
     void detect();
+    void moveApple();
+    bool isWin();
+    void begin();
 };
 
 

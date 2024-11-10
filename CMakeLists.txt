@@ -12,8 +12,6 @@ add_executable(main src/main.cpp
         src/controller/GameController.h
         src/controller/GameController.cpp
         src/object/Apple.cpp
-        src/view/GameView.h
-        src/view/GameView.cpp
         src/layer/Layer.h
         src/layer/Layer.cpp)
 

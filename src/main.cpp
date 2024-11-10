@@ -3,14 +3,15 @@
 #include "object\Apple.h"
 #include "controller\GameController.h"
 #include "layer/Layer.h"
+#include <fstream>
 
 Texture2D AppleTexture;
 Texture2D SnakeHeadTexture;
 Texture2D SnakeTexture;
 void init(){
-    //AppleTexture = LoadTexture("image/apple.png");
-    SnakeHeadTexture = LoadTexture("..\\images\\snake\\snake_head.png");
-    SnakeTexture = LoadTexture("..\\images\\snake\\snake_body.png");
+    SnakeHeadTexture = LoadTexture(R"(..\images\snake\snake_head.png)");
+    SnakeTexture = LoadTexture(R"(..\images\snake\snake_body.png)");
+    AppleTexture = LoadTexture("..\\images\\apple.png");
 }
 
 void mainMenu(){
@@ -24,19 +25,27 @@ void mainMenu(){
 }
 
 int main() {
+    std::ifstream InFile("score.txt");
+    std::ofstream OFile("score.txt");
     const int screenWidth = 800;
     const int screenHeight = 800;
+    int score;
     InitWindow(screenWidth, screenHeight, "Snake Made By Liusan");
     SetTargetFPS(60);
     init();
-    auto *s = new Snake(1,{100,500},{1,0},SnakeTexture);
-    auto controller = new GameController(s);
-
+    InFile >> score;
+    InFile.close();
+    score++;
+    OFile << score;
+    OFile.close();
+    auto *s = new Snake(4,{100,350},{1,0},SnakeTexture);
+    auto *a = new Apple({static_cast<float>(GetRandomValue(1,15)*50), static_cast<float>(GetRandomValue(1,15)*50)},AppleTexture);
+    auto controller = new GameController(s,a);
     bool isGameStarted = false;
     while (!WindowShouldClose()) {
         BeginDrawing();
         ClearBackground(RAYWHITE);
-        DrawTextureEx(SnakeTexture, {1,1},0,1,BLACK);
+        //game started
         if(isGameStarted){
             for (int i = 0; i < 16; ++i) {
                 DrawLine(0,i*50,800,i*50,BLACK);
@@ -46,19 +55,29 @@ int main() {
             controller->detect();
             controller->move();
             Layer::drawSnake(*s);
-            if(controller->IsGameOver())
+            Layer::drawApple(*a);
+            if(controller->isGameOver())
                 isGameStarted = false;
+            if(controller->isWin()){
+                isGameStarted = false;
+            }
             EndDrawing();
             continue;
         }
         //main menu
         mainMenu();
         Vector2 v = GetMousePosition();
-        if(v.x >= 300 && v.x <= 500 && v.y >= 300 && v.y <= 400) {
-            if (IsMouseButtonPressed(0))
+        if(v.x >= 300 && v.x <= 500 && v.y >= 300 && v.y <= 400 &&  isGameStarted == false) {
+            if (IsMouseButtonPressed(0)){
                 isGameStarted = true;
+            }
         }
-        //main game
+        if(controller->isWin()){
+            score++;
+            OFile << score;
+            OFile.close();
+            controller->begin();
+        }
         EndDrawing();
     }
     CloseWindow();

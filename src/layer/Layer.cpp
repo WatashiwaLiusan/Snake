@@ -11,3 +11,7 @@ void Layer::drawSnake(Snake &s) {
         body = body->next;
     }
 }
+
+void Layer::drawApple(Apple &a) {
+    DrawTextureEx(a.texture,a.getPosition(),0,1,RAYWHITE);
+}

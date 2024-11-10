@@ -9,6 +9,9 @@
 class Apple {
 public:
     Vector2 position;
+    Apple(Vector2 pos,const Texture2D &texture);
+    Texture2D texture;
+    Vector2 getPosition();
 };
 
 
